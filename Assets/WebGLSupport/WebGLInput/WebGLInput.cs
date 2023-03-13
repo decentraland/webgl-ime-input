@@ -174,42 +174,42 @@ namespace WebGLSupport
         /// <param name="eventData"></param>
         public void OnSelect()
         {
-//             if (id != -1) throw new Exception("OnSelect : id != -1");
-//
-//             var rect = GetElemetRect();
-//
-//             if (Mathf.Abs(rect.x) > Screen.width || Mathf.Abs(rect.y) > Screen.height)
-//                 rect = prevRect;
-//             else
-//                 prevRect = rect;
-//
-//             bool isPassword = input.contentType == ContentType.Password;
-//
-//             var fontSize = Mathf.Max(14, input.fontSize); // limit font size : 14 !!
-//
-//             // モバイルの場合、強制表示する
-//             var isHidden = !(showHtmlElement || Application.isMobilePlatform);
-//             id = WebGLInputPlugin.WebGLInputCreate(WebGLInput.CanvasId, rect.x, rect.y, rect.width, rect.height, fontSize, input.text, input.placeholder, input.lineType != LineType.SingleLine, isPassword, isHidden, Application.isMobilePlatform);
-//
-//             instances[id] = this;
-//             WebGLInputPlugin.WebGLInputEnterSubmit(id, input.lineType != LineType.MultiLineNewline);
-//             WebGLInputPlugin.WebGLInputOnFocus(id, OnFocus);
-//             WebGLInputPlugin.WebGLInputOnBlur(id, OnBlur);
-//             WebGLInputPlugin.WebGLInputOnValueChange(id, OnValueChange);
-//             WebGLInputPlugin.WebGLInputOnEditEnd(id, OnEditEnd);
-//             WebGLInputPlugin.WebGLInputTab(id, OnTab);
-//             // default value : https://www.w3schools.com/tags/att_input_maxlength.asp
-//             WebGLInputPlugin.WebGLInputMaxLength(id, (input.characterLimit > 0) ? input.characterLimit : 524288);
-//             WebGLInputPlugin.WebGLInputFocus(id);
-// #if WEBGLINPUT_TAB
-//             WebGLInputPlugin.WebGLInputEnableTabText(id, enableTabText);
-// #endif
-//             if (input.OnFocusSelectAll)
-//             {
-//                 WebGLInputPlugin.WebGLInputSetSelectionRange(id, 0, input.text.Length);
-//             }
-//
-//             WebGLWindow.OnBlurEvent += OnWindowBlur;
+            if (id != -1) throw new Exception("OnSelect : id != -1");
+
+            var rect = GetElemetRect();
+
+            if (Mathf.Abs(rect.x) > Screen.width || Mathf.Abs(rect.y) > Screen.height)
+                rect = prevRect;
+            else
+                prevRect = rect;
+
+            bool isPassword = input.contentType == ContentType.Password;
+
+            var fontSize = Mathf.Max(14, input.fontSize); // limit font size : 14 !!
+
+            // モバイルの場合、強制表示する
+            var isHidden = !(showHtmlElement || Application.isMobilePlatform);
+            id = WebGLInputPlugin.WebGLInputCreate(WebGLInput.CanvasId, rect.x, rect.y, rect.width, rect.height, fontSize, input.text, input.placeholder, input.lineType != LineType.SingleLine, isPassword, isHidden, Application.isMobilePlatform);
+
+            instances[id] = this;
+            WebGLInputPlugin.WebGLInputEnterSubmit(id, input.lineType != LineType.MultiLineNewline);
+            WebGLInputPlugin.WebGLInputOnFocus(id, OnFocus);
+            WebGLInputPlugin.WebGLInputOnBlur(id, OnBlur);
+            WebGLInputPlugin.WebGLInputOnValueChange(id, OnValueChange);
+            WebGLInputPlugin.WebGLInputOnEditEnd(id, OnEditEnd);
+            WebGLInputPlugin.WebGLInputTab(id, OnTab);
+            // default value : https://www.w3schools.com/tags/att_input_maxlength.asp
+            WebGLInputPlugin.WebGLInputMaxLength(id, (input.characterLimit > 0) ? input.characterLimit : 524288);
+            WebGLInputPlugin.WebGLInputFocus(id);
+#if WEBGLINPUT_TAB
+            WebGLInputPlugin.WebGLInputEnableTabText(id, enableTabText);
+#endif
+            if (input.OnFocusSelectAll)
+            {
+                WebGLInputPlugin.WebGLInputSetSelectionRange(id, 0, input.text.Length);
+            }
+
+            WebGLWindow.OnBlurEvent += OnWindowBlur;
         }
 
         void OnWindowBlur()
