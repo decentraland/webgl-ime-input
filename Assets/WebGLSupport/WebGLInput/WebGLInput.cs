@@ -269,7 +269,7 @@ namespace WebGLSupport
         static void OnFocus(int id)
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
-            //Input.ResetInputAxes(); // Inputの状態リセット
+            Input.ResetInputAxes(); // Inputの状態リセット
             //UnityEngine.WebGLInput.captureAllKeyboardInput = false;
 #endif
         }
@@ -279,7 +279,7 @@ namespace WebGLSupport
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
             //UnityEngine.WebGLInput.captureAllKeyboardInput = true;
-            //Input.ResetInputAxes(); // Inputの状態リセット
+            Input.ResetInputAxes(); // Inputの状態リセット
 #endif
             instances[id].StartCoroutine(Blur(id));
         }
@@ -375,6 +375,7 @@ namespace WebGLSupport
                 }
             }
 
+			/*
             var start = WebGLInputPlugin.WebGLInputSelectionStart(id);
             var end = WebGLInputPlugin.WebGLInputSelectionEnd(id);
             // 選択方向によって設定します
@@ -388,6 +389,7 @@ namespace WebGLSupport
                 input.selectionFocusPosition = end;
                 input.selectionAnchorPosition = start;
             }
+			*/
 
             input.Rebuild();
         }
@@ -398,7 +400,7 @@ namespace WebGLSupport
 
 #if UNITY_WEBGL && !UNITY_EDITOR
             //UnityEngine.WebGLInput.captureAllKeyboardInput = true;
-            //Input.ResetInputAxes(); // Inputの状態リセット
+            Input.ResetInputAxes(); // Inputの状態リセット
 #endif
             DeactivateInputField();
         }
