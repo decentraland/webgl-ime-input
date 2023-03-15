@@ -375,7 +375,6 @@ namespace WebGLSupport
                 }
             }
 
-			/*
             var start = WebGLInputPlugin.WebGLInputSelectionStart(id);
             var end = WebGLInputPlugin.WebGLInputSelectionEnd(id);
             // 選択方向によって設定します
@@ -389,7 +388,6 @@ namespace WebGLSupport
                 input.selectionFocusPosition = end;
                 input.selectionAnchorPosition = start;
             }
-			*/
 
             input.Rebuild();
         }
