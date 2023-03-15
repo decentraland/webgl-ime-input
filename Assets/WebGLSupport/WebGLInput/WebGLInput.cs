@@ -270,7 +270,7 @@ namespace WebGLSupport
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
             Input.ResetInputAxes(); // Inputの状態リセット
-            UnityEngine.WebGLInput.captureAllKeyboardInput = false;
+            //UnityEngine.WebGLInput.captureAllKeyboardInput = false;
 #endif
         }
 
@@ -278,7 +278,7 @@ namespace WebGLSupport
         static void OnBlur(int id)
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
-            UnityEngine.WebGLInput.captureAllKeyboardInput = false;
+            //UnityEngine.WebGLInput.captureAllKeyboardInput = true;
             Input.ResetInputAxes(); // Inputの状態リセット
 #endif
             instances[id].StartCoroutine(Blur(id));
@@ -397,7 +397,7 @@ namespace WebGLSupport
             if (!instances.ContainsKey(id)) return;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-            UnityEngine.WebGLInput.captureAllKeyboardInput = false;
+            //UnityEngine.WebGLInput.captureAllKeyboardInput = true;
             Input.ResetInputAxes(); // Inputの状態リセット
 #endif
             DeactivateInputField();
