@@ -90,7 +90,7 @@ var WebGLInput = {
 		// for tab key
         input.addEventListener('keydown', function (e) {
             if ((e.which && e.which === 9) || (e.keyCode && e.keyCode === 9)) {
-                //e.preventDefault();
+                e.preventDefault();
 
 				// if enable tab text
 				if(input.enableTabText){
