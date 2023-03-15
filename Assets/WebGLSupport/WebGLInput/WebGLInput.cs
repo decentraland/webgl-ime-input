@@ -174,6 +174,7 @@ namespace WebGLSupport
         /// <param name="eventData"></param>
         public void OnSelect()
         {
+	/*
             if (id != -1) throw new Exception("OnSelect : id != -1");
 
             var rect = GetElemetRect();
@@ -210,6 +211,7 @@ namespace WebGLSupport
             }
 
             WebGLWindow.OnBlurEvent += OnWindowBlur;
+*/
         }
 
         void OnWindowBlur()
@@ -256,6 +258,7 @@ namespace WebGLSupport
 
         internal void DeactivateInputField()
         {
+/*
             if (!instances.ContainsKey(id)) return;
 
             WebGLInputPlugin.WebGLInputDelete(id);
@@ -263,6 +266,7 @@ namespace WebGLSupport
             instances.Remove(id);
             id = -1;    // reset id to -1;
             WebGLWindow.OnBlurEvent -= OnWindowBlur;
+*/
         }
 
         [MonoPInvokeCallback(typeof(Action<int>))]
@@ -287,12 +291,14 @@ namespace WebGLSupport
         static IEnumerator Blur(int id)
         {
             yield return null;
+/*
             if (!instances.ContainsKey(id)) yield break;
 
             var block = instances[id].blurBlock;    // get blur block state
             instances[id].blurBlock = false;        // reset instalce block state
             if (block) yield break;                 // if block. break it!!
             instances[id].DeactivateInputField();
+*/
         }
 
         [MonoPInvokeCallback(typeof(Action<int, string>))]
@@ -344,6 +350,7 @@ namespace WebGLSupport
 
         void Update()
         {
+/*
             if (input == null || !input.isFocused)
             {
                 CheckOutFocus();
@@ -390,10 +397,12 @@ namespace WebGLSupport
             }
 
             input.Rebuild();
+*/
         }
 
         private void OnDestroy()
         {
+/*
             if (!instances.ContainsKey(id)) return;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -401,6 +410,7 @@ namespace WebGLSupport
             Input.ResetInputAxes(); // Inputの状態リセット
 #endif
             DeactivateInputField();
+*/
         }
 
         private void OnEnable()
@@ -422,11 +432,13 @@ namespace WebGLSupport
 
         public void CheckOutFocus()
         {
+/*
             if (!Application.isMobilePlatform) return;
             if (!instances.ContainsKey(id)) return;
             var current = EventSystem.current.currentSelectedGameObject;
             if (current != null) return;
             WebGLInputPlugin.WebGLInputForceBlur(id);   // Input ではないし、キーボードを閉じる
+*/
         }
 
         /// <summary>
