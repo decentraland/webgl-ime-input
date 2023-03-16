@@ -79,7 +79,7 @@ var WebGLInput = {
 			if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
 				if(falg)
 				{
-					e.preventDefault();
+					//e.preventDefault();
 					input.blur();
 				}
 			}
